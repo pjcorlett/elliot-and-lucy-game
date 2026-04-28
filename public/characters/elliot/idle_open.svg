@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 380" width="200" height="380">
+  <!-- Elliot - idle, mouth open -->
+
+  <rect x="78" y="240" width="20" height="100" fill="#6889ab" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="102" y="240" width="20" height="100" fill="#6889ab" stroke="#2c2c2c" stroke-width="2"/>
+  <ellipse cx="88" cy="345" rx="14" ry="6" fill="#594a3c" stroke="#2c2c2c" stroke-width="2"/>
+  <ellipse cx="112" cy="345" rx="14" ry="6" fill="#594a3c" stroke="#2c2c2c" stroke-width="2"/>
+
+  <path d="M60,160 Q60,130 100,130 Q140,130 140,160 L140,250 Q100,260 60,250 Z"
+        fill="#7BB661" stroke="#2c2c2c" stroke-width="3"/>
+  <path d="M85,135 L100,148 L115,135 Z" fill="#5DAA68" stroke="#2c2c2c" stroke-width="2"/>
+
+  <rect x="48" y="160" width="14" height="80" rx="6" fill="#7BB661" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="138" y="160" width="14" height="80" rx="6" fill="#7BB661" stroke="#2c2c2c" stroke-width="2"/>
+  <circle cx="55" cy="248" r="9" fill="#f4d6b5" stroke="#2c2c2c" stroke-width="2"/>
+  <circle cx="145" cy="248" r="9" fill="#f4d6b5" stroke="#2c2c2c" stroke-width="2"/>
+
+  <ellipse cx="100" cy="100" rx="46" ry="54" fill="#f4d6b5" stroke="#2c2c2c" stroke-width="3"/>
+
+  <path d="M55,80 Q52,60 70,55 Q72,40 88,48 Q92,38 100,46 Q108,38 112,48 Q128,40 130,55 Q148,60 145,80 Q140,68 130,72 Q124,60 112,68 Q104,58 100,66 Q96,58 88,68 Q76,60 70,72 Q60,68 55,80 Z"
+        fill="#2c2c2c" stroke="#1a1a1a" stroke-width="2"/>
+
+  <path d="M78,90 L90,88" stroke="#2c2c2c" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M110,88 L122,90" stroke="#2c2c2c" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <ellipse cx="84" cy="102" rx="7" ry="9" fill="white" stroke="#2c2c2c" stroke-width="2"/>
+  <ellipse cx="116" cy="102" rx="7" ry="9" fill="white" stroke="#2c2c2c" stroke-width="2"/>
+  <ellipse cx="84" cy="104" rx="4" ry="6" fill="#2c2c2c"/>
+  <ellipse cx="116" cy="104" rx="4" ry="6" fill="#2c2c2c"/>
+  <circle cx="86" cy="101" r="1.5" fill="white"/>
+  <circle cx="118" cy="101" r="1.5" fill="white"/>
+
+  <ellipse cx="76" cy="120" rx="5" ry="3" fill="#f4a6a6" opacity="0.5"/>
+  <ellipse cx="124" cy="120" rx="5" ry="3" fill="#f4a6a6" opacity="0.5"/>
+
+  <!-- Mouth OPEN -->
+  <ellipse cx="100" cy="132" rx="7" ry="5" fill="#7a3030" stroke="#2c2c2c" stroke-width="2"/>
+  <ellipse cx="100" cy="134" rx="4" ry="2" fill="#cc5e5e"/>
+</svg>

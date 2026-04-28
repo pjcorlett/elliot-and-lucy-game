@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" width="1920" height="1080">
+  <!-- Checkout area with cash register, conveyor, produce in background -->
+  <defs>
+    <linearGradient id="floor2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4c8b0"/>
+      <stop offset="100%" stop-color="#9c8e76"/>
+    </linearGradient>
+    <linearGradient id="ceiling2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f4f1e8"/>
+      <stop offset="100%" stop-color="#e8e2cc"/>
+    </linearGradient>
+    <linearGradient id="conveyor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3d3d3d"/>
+      <stop offset="100%" stop-color="#1f1f1f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Ceiling -->
+  <rect width="1920" height="180" fill="url(#ceiling2)"/>
+
+  <!-- Back wall -->
+  <rect y="180" width="1920" height="600" fill="#f4ebd6"/>
+
+  <!-- Produce bins behind cashier (on left) -->
+  <rect x="40" y="420" width="220" height="280" fill="#7BB661" stroke="#2c2c2c" stroke-width="3" rx="6"/>
+  <ellipse cx="100" cy="420" rx="32" ry="14" fill="#5DAA68" stroke="#2c2c2c" stroke-width="2"/>
+  <ellipse cx="160" cy="410" rx="32" ry="14" fill="#5DAA68" stroke="#2c2c2c" stroke-width="2"/>
+  <ellipse cx="220" cy="420" rx="32" ry="14" fill="#5DAA68" stroke="#2c2c2c" stroke-width="2"/>
+
+  <rect x="280" y="420" width="220" height="280" fill="#e89b4f" stroke="#2c2c2c" stroke-width="3" rx="6"/>
+  <circle cx="320" cy="430" r="20" fill="#f4a657" stroke="#2c2c2c" stroke-width="2"/>
+  <circle cx="370" cy="425" r="20" fill="#f4a657" stroke="#2c2c2c" stroke-width="2"/>
+  <circle cx="420" cy="432" r="20" fill="#f4a657" stroke="#2c2c2c" stroke-width="2"/>
+  <circle cx="470" cy="425" r="20" fill="#f4a657" stroke="#2c2c2c" stroke-width="2"/>
+
+  <!-- "RND" apple sign (the show's grocery brand) -->
+  <circle cx="1620" cy="800" r="80" fill="#cc5e5e" stroke="#2c2c2c" stroke-width="5"/>
+  <ellipse cx="1620" cy="780" rx="55" ry="50" fill="#cc5e5e" stroke="#2c2c2c" stroke-width="4"/>
+  <path d="M1620,720 Q1640,700 1655,720" stroke="#5DAA68" stroke-width="6" fill="none"/>
+  <text x="1620" y="820" font-size="42" fill="white" text-anchor="middle" font-family="Comic Sans MS" font-weight="bold">RND</text>
+
+  <!-- Cash register (back-right of checkout) -->
+  <rect x="1280" y="380" width="280" height="240" fill="#a8a8a8" stroke="#2c2c2c" stroke-width="4" rx="6"/>
+  <rect x="1310" y="410" width="220" height="100" fill="#2c2c2c" stroke="#1a1a1a" stroke-width="3" rx="4"/>
+  <!-- Display showing 4.83 -->
+  <text x="1420" y="478" font-size="56" fill="#f4c542" text-anchor="middle" font-family="monospace" font-weight="bold">$4.83</text>
+  <!-- Keys -->
+  <rect x="1310" y="530" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1360" y="530" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1410" y="530" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1460" y="530" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1310" y="570" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1360" y="570" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1410" y="570" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1460" y="570" width="40" height="30" fill="#666" stroke="#2c2c2c" stroke-width="2"/>
+
+  <!-- Conveyor belt -->
+  <rect x="700" y="700" width="1100" height="80" fill="url(#conveyor)" stroke="#2c2c2c" stroke-width="4" rx="4"/>
+  <!-- Belt segments -->
+  <line x1="850" y1="700" x2="850" y2="780" stroke="#666" stroke-width="2"/>
+  <line x1="1000" y1="700" x2="1000" y2="780" stroke="#666" stroke-width="2"/>
+  <line x1="1150" y1="700" x2="1150" y2="780" stroke="#666" stroke-width="2"/>
+  <line x1="1300" y1="700" x2="1300" y2="780" stroke="#666" stroke-width="2"/>
+  <line x1="1450" y1="700" x2="1450" y2="780" stroke="#666" stroke-width="2"/>
+  <line x1="1600" y1="700" x2="1600" y2="780" stroke="#666" stroke-width="2"/>
+
+  <!-- Items on conveyor -->
+  <rect x="900" y="650" width="60" height="50" fill="#cc5e5e" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="980" y="660" width="50" height="40" fill="#5DAA68" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1050" y="650" width="70" height="50" fill="#f4c542" stroke="#2c2c2c" stroke-width="2"/>
+
+  <!-- Magazine rack on right -->
+  <rect x="1820" y="600" width="100" height="200" fill="#f4ebd6" stroke="#2c2c2c" stroke-width="3"/>
+  <rect x="1830" y="620" width="80" height="55" fill="#cc5e9b" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1830" y="685" width="80" height="55" fill="#5da4ff" stroke="#2c2c2c" stroke-width="2"/>
+  <rect x="1830" y="750" width="80" height="40" fill="#7BB661" stroke="#2c2c2c" stroke-width="2"/>
+
+  <!-- Floor -->
+  <rect y="780" width="1920" height="300" fill="url(#floor2)"/>
+  <line x1="0" y1="850" x2="1920" y2="850" stroke="#7a6e58" stroke-width="2" opacity="0.4"/>
+  <line x1="0" y1="950" x2="1920" y2="950" stroke="#7a6e58" stroke-width="2" opacity="0.4"/>
+  <line x1="600" y1="780" x2="600" y2="1080" stroke="#7a6e58" stroke-width="2" opacity="0.4"/>
+  <line x1="1200" y1="780" x2="1200" y2="1080" stroke="#7a6e58" stroke-width="2" opacity="0.4"/>
+</svg>

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import type { Choice, Episode, Scene } from "../engine/types";
+import type { Choice, Episode, Scene, Speaker } from "../engine/types";
 import { speak, stopAll } from "../engine/tts";
 import { DialogueBox } from "./DialogueBox";
 import { ChoiceMenu } from "./ChoiceMenu";
 import { EndingCard } from "./EndingCard";
+import { Character } from "./Character";
 
 type Props = {
   episode: Episode;
@@ -81,20 +82,31 @@ function ScenePlayer({ scene, onNavigate, onFinish }: PlayerProps) {
 
   const allLinesDone = lineIndex >= scene.lines.length;
   const isEnding = scene.isEnding && allLinesDone;
+  const currentLine =
+    lineIndex < scene.lines.length ? scene.lines[lineIndex] : null;
+  const currentSpeaker: Speaker | null = currentLine?.speaker ?? null;
 
   return (
     <div className="scene-runner">
-      <div className="scene-bg-wrap">
-        <img
-          key={scene.background}
+      <div className="scene-stage">
+        <div
           className="scene-bg"
-          src={scene.background}
-          alt=""
+          style={{ backgroundImage: `url("${scene.background}")` }}
+          key={scene.background}
         />
+        <div className="scene-characters">
+          {scene.characters.map((char, i) => (
+            <Character
+              key={`${char.id}_${i}`}
+              character={char}
+              isSpeaking={currentSpeaker === char.id}
+            />
+          ))}
+        </div>
       </div>
 
-      {!isEnding && !showChoices && lineIndex < scene.lines.length && (
-        <DialogueBox line={scene.lines[lineIndex]} onAdvance={advance} />
+      {!isEnding && !showChoices && currentLine && (
+        <DialogueBox line={currentLine} onAdvance={advance} />
       )}
 
       {showChoices && scene.choices && (

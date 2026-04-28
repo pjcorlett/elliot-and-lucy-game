@@ -1,6 +1,17 @@
-import type { Episode } from "../engine/types";
+import type { Episode, CharacterRef } from "../engine/types";
 
-const bg = (file: string) => `${import.meta.env.BASE_URL}scenes/${file}`;
+const bg = (file: string) => `${import.meta.env.BASE_URL}backgrounds/${file}`;
+
+// Reusable character placements
+const lucyCenter: CharacterRef = { id: "lucy", pose: "idle", x: 50, y: 60 };
+const lucyLeft: CharacterRef = { id: "lucy", pose: "idle", x: 38, y: 60 };
+const lucyClose: CharacterRef = { id: "lucy", pose: "idle", x: 50, y: 55, scale: 1.25 };
+const elliotRight: CharacterRef = { id: "elliot", pose: "idle", x: 62, y: 60 };
+const elliotLeft: CharacterRef = { id: "elliot", pose: "idle", x: 25, y: 60 };
+const ladyCenter: CharacterRef = { id: "lady", pose: "idle", x: 56, y: 56 };
+const ladyRight: CharacterRef = { id: "lady", pose: "idle", x: 70, y: 56 };
+const cashierBack: CharacterRef = { id: "cashier", pose: "idle", x: 88, y: 60, scale: 0.85 };
+const momBack: CharacterRef = { id: "mom", pose: "idle", x: 84, y: 56, scale: 0.95 };
 
 export const ep01: Episode = {
   id: "ep01",
@@ -9,19 +20,17 @@ export const ep01: Episode = {
   scenes: {
     title: {
       id: "title",
-      background: bg("01_title.png"),
+      background: bg("driveway.svg"),
+      characters: [],
       lines: [],
       next: "intro_1",
     },
     intro_1: {
       id: "intro_1",
-      background: bg("02_intro_lucy.png"),
+      background: bg("driveway.svg"),
+      characters: [lucyCenter],
       lines: [
-        {
-          id: "lucy_intro_1a",
-          speaker: "lucy",
-          text: "Hi, I'm Lucy.",
-        },
+        { id: "lucy_intro_1a", speaker: "lucy", text: "Hi, I'm Lucy." },
         {
           id: "lucy_intro_1b",
           speaker: "lucy",
@@ -32,7 +41,8 @@ export const ep01: Episode = {
     },
     intro_2: {
       id: "intro_2",
-      background: bg("03_intro_lucy_excited.png"),
+      background: bg("driveway.svg"),
+      characters: [lucyCenter],
       lines: [
         {
           id: "lucy_intro_2a",
@@ -49,13 +59,10 @@ export const ep01: Episode = {
     },
     aisle_finds: {
       id: "aisle_finds",
-      background: bg("04_aisle_finds_money.png"),
+      background: bg("store_aisle.svg"),
+      characters: [lucyCenter],
       lines: [
-        {
-          id: "lucy_finds",
-          speaker: "lucy",
-          text: "Hey, what's that on the floor?",
-        },
+        { id: "lucy_finds", speaker: "lucy", text: "Hey, what's that on the floor?" },
         {
           id: "narrator_pickup",
           speaker: "narrator",
@@ -66,7 +73,8 @@ export const ep01: Episode = {
     },
     aisle_dream: {
       id: "aisle_dream",
-      background: bg("05_aisle_daydream.png"),
+      background: bg("store_aisle.svg"),
+      characters: [lucyCenter],
       lines: [
         {
           id: "lucy_dream",
@@ -78,13 +86,10 @@ export const ep01: Episode = {
     },
     elliot_arrives: {
       id: "elliot_arrives",
-      background: bg("06_aisle_elliot_smile.png"),
+      background: bg("store_aisle.svg"),
+      characters: [lucyLeft, elliotRight],
       lines: [
-        {
-          id: "elliot_what",
-          speaker: "elliot",
-          text: "Whoa, where'd you get that?",
-        },
+        { id: "elliot_what", speaker: "elliot", text: "Whoa, where'd you get that?" },
         {
           id: "lucy_explain",
           speaker: "lucy",
@@ -95,7 +100,8 @@ export const ep01: Episode = {
     },
     elliot_worried: {
       id: "elliot_worried",
-      background: bg("07_aisle_elliot_worried.png"),
+      background: bg("store_aisle.svg"),
+      characters: [lucyLeft, elliotRight],
       lines: [
         {
           id: "elliot_uhoh",
@@ -103,23 +109,17 @@ export const ep01: Episode = {
           text: "Hmm... someone must have dropped it. We should head to the checkout.",
         },
       ],
-      next: "checkout_walk",
-    },
-    checkout_walk: {
-      id: "checkout_walk",
-      background: bg("08_walking_to_checkout.png"),
-      lines: [
-        {
-          id: "lucy_walk",
-          speaker: "lucy",
-          text: "Off to the checkout we go...",
-        },
-      ],
       next: "checkout_arrive",
     },
     checkout_arrive: {
       id: "checkout_arrive",
-      background: bg("09_at_checkout.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "elliot", pose: "idle", x: 22, y: 60 },
+        { id: "lucy", pose: "idle", x: 38, y: 60 },
+        { id: "lady", pose: "idle", x: 56, y: 56 },
+        cashierBack,
+      ],
       lines: [
         {
           id: "lucy_at_checkout",
@@ -131,7 +131,13 @@ export const ep01: Episode = {
     },
     checkout_pay: {
       id: "checkout_pay",
-      background: bg("10_checkout_483.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "elliot", pose: "idle", x: 22, y: 60 },
+        { id: "lucy", pose: "idle", x: 38, y: 60 },
+        { id: "lady", pose: "idle", x: 56, y: 56 },
+        cashierBack,
+      ],
       lines: [
         {
           id: "cashier_total",
@@ -143,7 +149,13 @@ export const ep01: Episode = {
     },
     lady_realizes: {
       id: "lady_realizes",
-      background: bg("11_lady_realizes.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "elliot", pose: "idle", x: 22, y: 60 },
+        { id: "lucy", pose: "idle", x: 38, y: 60 },
+        { id: "lady", pose: "idle", x: 56, y: 56 },
+        cashierBack,
+      ],
       lines: [
         {
           id: "lady_oh_dear",
@@ -160,19 +172,20 @@ export const ep01: Episode = {
     },
     lucy_realizes: {
       id: "lucy_realizes",
-      background: bg("12_lucy_worried.png"),
-      lines: [
-        {
-          id: "lucy_uhoh",
-          speaker: "lucy",
-          text: "Uh oh...",
-        },
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "elliot", pose: "idle", x: 22, y: 60 },
+        { id: "lucy", pose: "idle", x: 38, y: 60 },
+        { id: "lady", pose: "idle", x: 56, y: 56 },
+        cashierBack,
       ],
+      lines: [{ id: "lucy_uhoh", speaker: "lucy", text: "Uh oh..." }],
       next: "lucy_choice_setup",
     },
     lucy_choice_setup: {
       id: "lucy_choice_setup",
-      background: bg("13_lucy_holds_money.png"),
+      background: bg("checkout.svg"),
+      characters: [lucyClose],
       lines: [
         {
           id: "lucy_setup",
@@ -190,7 +203,8 @@ export const ep01: Episode = {
 
     the_choice: {
       id: "the_choice",
-      background: bg("13_lucy_holds_money.png"),
+      background: bg("checkout.svg"),
+      characters: [lucyClose],
       lines: [
         {
           id: "narrator_choice",
@@ -212,7 +226,12 @@ export const ep01: Episode = {
 
     keep_branch: {
       id: "keep_branch",
-      background: bg("12_lucy_worried.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "lucy", pose: "idle", x: 35, y: 60 },
+        { id: "lady", pose: "idle", x: 60, y: 56 },
+        cashierBack,
+      ],
       lines: [
         {
           id: "lucy_keep",
@@ -234,7 +253,8 @@ export const ep01: Episode = {
     },
     keep_wrong: {
       id: "keep_wrong",
-      background: bg("12_lucy_worried.png"),
+      background: bg("checkout.svg"),
+      characters: [lucyClose],
       lines: [
         {
           id: "lucy_keep_wrong",
@@ -252,13 +272,15 @@ export const ep01: Episode = {
 
     blame_branch: {
       id: "blame_branch",
-      background: bg("16_blame_elliot_shocked.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "elliot", pose: "idle", x: 25, y: 60 },
+        { id: "lucy", pose: "idle", x: 45, y: 60 },
+        { id: "lady", pose: "idle", x: 65, y: 56 },
+        cashierBack,
+      ],
       lines: [
-        {
-          id: "lucy_blame_1",
-          speaker: "lucy",
-          text: "Um, it was Elliot's fault!",
-        },
+        { id: "lucy_blame_1", speaker: "lucy", text: "Um, it was Elliot's fault!" },
         { id: "elliot_what_1", speaker: "elliot", text: "What?!" },
         {
           id: "lucy_blame_2",
@@ -270,13 +292,14 @@ export const ep01: Episode = {
     },
     blame_branch_2: {
       id: "blame_branch_2",
-      background: bg("17_blame_argument.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "elliot", pose: "idle", x: 25, y: 60 },
+        { id: "lucy", pose: "idle", x: 45, y: 60 },
+        { id: "lady", pose: "idle", x: 65, y: 56 },
+      ],
       lines: [
-        {
-          id: "elliot_what_2",
-          speaker: "elliot",
-          text: "What?! I never said that!",
-        },
+        { id: "elliot_what_2", speaker: "elliot", text: "What?! I never said that!" },
         {
           id: "elliot_take",
           speaker: "elliot",
@@ -287,7 +310,11 @@ export const ep01: Episode = {
     },
     blame_branch_3: {
       id: "blame_branch_3",
-      background: bg("19_elliot_returns_money.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "elliot", pose: "idle", x: 35, y: 60 },
+        { id: "lady", pose: "idle", x: 60, y: 56 },
+      ],
       lines: [
         {
           id: "narrator_blame",
@@ -300,7 +327,8 @@ export const ep01: Episode = {
     },
     blame_wrong: {
       id: "blame_wrong",
-      background: bg("18_lucy_close_up_shock.png"),
+      background: bg("checkout.svg"),
+      characters: [lucyClose],
       lines: [
         {
           id: "narrator_blame_wrong",
@@ -313,18 +341,18 @@ export const ep01: Episode = {
 
     give_branch: {
       id: "give_branch",
-      background: bg("14_giving_money.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "lucy", pose: "idle", x: 38, y: 60 },
+        ladyCenter,
+      ],
       lines: [
         {
           id: "lucy_give",
           speaker: "lucy",
           text: "Um, excuse me, ma'am. I think this money is probably yours.",
         },
-        {
-          id: "lady_where",
-          speaker: "lady",
-          text: "Oh! Where did you find it?",
-        },
+        { id: "lady_where", speaker: "lady", text: "Oh! Where did you find it?" },
         {
           id: "lucy_cheese",
           speaker: "lucy",
@@ -335,7 +363,12 @@ export const ep01: Episode = {
     },
     give_branch_2: {
       id: "give_branch_2",
-      background: bg("15_lady_smiles.png"),
+      background: bg("checkout.svg"),
+      characters: [
+        { id: "lucy", pose: "idle", x: 38, y: 60 },
+        ladyCenter,
+        momBack,
+      ],
       lines: [
         {
           id: "lady_yes",
@@ -358,7 +391,8 @@ export const ep01: Episode = {
 
     outro_1: {
       id: "outro_1",
-      background: bg("20_outro_lucy.png"),
+      background: bg("driveway.svg"),
+      characters: [lucyCenter],
       lines: [
         {
           id: "lucy_outro_1",
@@ -375,7 +409,8 @@ export const ep01: Episode = {
     },
     outro_2: {
       id: "outro_2",
-      background: bg("21_outro_lucy_arms_wide.png"),
+      background: bg("driveway.svg"),
+      characters: [lucyCenter],
       lines: [
         {
           id: "lucy_outro_3",
@@ -392,10 +427,14 @@ export const ep01: Episode = {
     },
     ending: {
       id: "ending",
-      background: bg("01_title.png"),
+      background: bg("driveway.svg"),
+      characters: [],
       lines: [],
       isEnding: true,
       endingMessage: "Today we learned about HONESTY.",
     },
   },
 };
+
+void elliotLeft;
+void ladyRight;
