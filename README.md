@@ -29,6 +29,18 @@ npm run dev
 
 Each dialogue line in `src/scenes/ep01.ts` has an `id`. To replace TTS for a line, drop a file at `public/audio/<id>.mp3` — it will play instead of the synthesized voice automatically.
 
+The master audio extracted from the pilot lives at `public/audio/_master.mp3` (the underscore prefix means the engine ignores it). To slice it into per-line clips:
+
+1. Open `tools/audio-timestamps.json` and adjust the `start` / `end` seconds for each line so they match the master audio (the current values are rough estimates).
+2. Run `node tools/split-audio.mjs` from the project root. It writes one `.mp3` per line into `public/audio/`.
+3. Reload the game — the engine now uses the real voice lines.
+
+For waveform-precise editing, open `_master.mp3` in Audacity (or any DAW) to find exact boundaries.
+
+## Replacing the rough character/background art
+
+See [`ARTIST_SPEC.md`](./ARTIST_SPEC.md) for the file layout the artist needs to follow. New SVGs at the matching paths automatically replace the stand-ins — no code changes needed.
+
 ## Adding more episodes
 
-Episodes live in `src/scenes/`. Each is an `Episode` object (see `src/engine/types.ts`) — a `Record<sceneId, Scene>` describing dialogue lines and either an auto-advance `next` or branching `choices[]`.
+Episodes live in `src/scenes/`. Each is an `Episode` object (see `src/engine/types.ts`) — a `Record<sceneId, Scene>` describing dialogue lines, characters present + their poses/positions, and either an auto-advance `next` or branching `choices[]`.
